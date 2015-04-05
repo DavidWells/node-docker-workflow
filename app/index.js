@@ -9,8 +9,6 @@ var client = redis.createClient(
   process.env.REDIS_1_PORT_6379_TCP_ADDR || 6379
 );
 
-// Add new line
-
 app.get('/', function(req, res, next) {
   client.incr('visits', function(err, visits) {
     if(err) return next(err);
